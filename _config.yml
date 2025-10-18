@@ -6,4 +6,5 @@ plugins:
 remote_theme: abhinavs/moonwalk
 theme_config:
   appearance: "dark"
+  appearance_toggle: false
   show_copyright: true
