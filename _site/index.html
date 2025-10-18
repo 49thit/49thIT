@@ -47,19 +47,69 @@
     <main class="page-content" aria-label="Content">
       <div class="layout-container">
         <aside class="sidebar">
-          <nav>
+          <nav class="post-nav">
+  <button class="post-nav__toggle" type="button" aria-expanded="false">
+    Browse Episodes
+    <span class="post-nav__icon" aria-hidden="true"></span>
+  </button>
   <ul>
     
       <li>
-        <a href="/2025/02/02/sample.html">Episode OO Sample2</a>
+        <a href="/2025/10/18/lorem-ipsum.html">episode034 – Aurora Debugging Session</a>
       </li>
     
       <li>
-        <a href="/2025/01/01/sample.html">Episode OO Sample</a>
+        <a href="/2025/10/17/lorem-ipsum-volume-1.html">episode011 – The Skills to Pay the Bills</a>
+      </li>
+    
+      <li>
+        <a href="/2025/10/16/lorem-ipsum-volume-2.html">episode014 – When the Levee Turns into a Monkey Named Larry</a>
+      </li>
+    
+      <li>
+        <a href="/2025/10/15/lorem-ipsum-volume-3.html">episode017 – Satellites and Snow Machines</a>
+      </li>
+    
+      <li>
+        <a href="/2025/10/14/lorem-ipsum-volume-4.html">episode020 – Rebooting the Northern Lights</a>
+      </li>
+    
+      <li>
+        <a href="/2025/10/13/lorem-ipsum-volume-5.html">episode023 – Anchorage After Midnight</a>
+      </li>
+    
+      <li>
+        <a href="/2025/10/12/lorem-ipsum-volume-6.html">episode026 – The Router in the Woods</a>
+      </li>
+    
+      <li>
+        <a href="/2025/10/11/lorem-ipsum-volume-7.html">episode030 – Coffee, Code, and Caribou</a>
+      </li>
+    
+      <li>
+        <a href="/2025/02/02/sample.html">episode002 – Cables in the Permafrost</a>
+      </li>
+    
+      <li>
+        <a href="/2025/01/01/sample.html">episode001 – Frost Lines and Fiber Lines</a>
       </li>
     
   </ul>
 </nav>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.querySelector(".post-nav__toggle");
+    const list = document.querySelector(".post-nav ul");
+    if (!toggle || !list) return;
+
+    toggle.addEventListener("click", function () {
+      const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", (!isExpanded).toString());
+      list.classList.toggle("is-open", !isExpanded);
+    });
+  });
+</script>
+
         </aside>
         <section class="main-content">
           <p>Hello World</p>

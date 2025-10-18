@@ -1,4 +1,8 @@
-<nav>
+<nav class="post-nav">
+  <button class="post-nav__toggle" type="button" aria-expanded="false">
+    Browse Episodes
+    <span class="post-nav__icon" aria-hidden="true"></span>
+  </button>
   <ul>
     {% for post in site.posts %}
       <li>
@@ -7,3 +11,16 @@
     {% endfor %}
   </ul>
 </nav>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.querySelector(".post-nav__toggle");
+    const list = document.querySelector(".post-nav ul");
+    if (!toggle || !list) return;
+
+    toggle.addEventListener("click", function () {
+      const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", (!isExpanded).toString());
+      list.classList.toggle("is-open", !isExpanded);
+    });
+  });
+</script>
