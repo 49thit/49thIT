@@ -50,6 +50,27 @@ main.page-content {
   padding: clamp(2rem, 4vw, 3.5rem);
 }
 
+.site-banner {
+  width: 100%;
+  margin: 0 auto clamp(1.75rem, 3vw, 2.5rem);
+  display: flex;
+  justify-content: center;
+}
+
+.site-banner picture {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+}
+
+.site-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0 !important;
+}
+
 .theme-toggle {
   display: none !important;
 }
@@ -571,6 +592,7 @@ figcaption {
   .layout-container {
     flex-direction: column;
     gap: 1.5rem;
+    align-items: center;
   }
 
   .sidebar {
@@ -587,7 +609,64 @@ figcaption {
   }
 
   .post-nav__toggle {
+    display: flex;
+    width: 100%;
+    max-width: none;
+    margin: 0 0 0.75rem;
+  }
+
+  .sidebar .post-nav ul {
     display: none;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    max-height: calc(5 * 3.75rem);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 0.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(96, 38, 158, 0.4) transparent;
+  }
+
+  .sidebar .post-nav ul.is-open {
+    display: grid;
+  }
+
+  .sidebar .post-nav ul::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .sidebar .post-nav ul::-webkit-scrollbar-thumb {
+    background: rgba(96, 38, 158, 0.4);
+    border-radius: 999px;
+  }
+
+  .sidebar .post-nav ul::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .sidebar nav a {
+    width: 100%;
+    max-width: none;
+    flex: 1 1 auto;
+    display: flex;
+  }
+
+  .sidebar .post-nav li {
+    width: 100%;
+  }
+
+  .site-banner picture,
+  .sidebar .post-nav {
+    width: 100%;
+    max-width: clamp(18rem, 90vw, 34rem);
+    margin: 0 auto;
+  }
+
+  .sidebar {
+    width: 100%;
+    max-width: clamp(18rem, 90vw, 34rem);
+    margin: 0 auto;
   }
 
   img {

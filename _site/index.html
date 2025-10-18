@@ -45,10 +45,30 @@
 </head>
 <body>
     <main class="page-content" aria-label="Content">
+      <header class="site-banner" role="banner">
+        <picture>
+          <source srcset="/assets/img/banner.jpg" type="image/jpeg" />
+          <img
+            src="/assets/img/banner.png"
+            alt="49th IT header banner"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
+      </header>
       <div class="layout-container">
         <aside class="sidebar">
           <nav class="post-nav">
-  <ul>
+  <button
+    class="post-nav__toggle"
+    type="button"
+    aria-expanded="false"
+    aria-controls="post-nav-list"
+  >
+    Browse Episodes
+    <span class="post-nav__icon" aria-hidden="true"></span>
+  </button>
+  <ul id="post-nav-list">
     
       <li>
         <a href="/2025/10/18/lorem-ipsum.html">episode034 – Aurora Debugging Session</a>
@@ -92,6 +112,19 @@
     
   </ul>
 </nav>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.querySelector(".post-nav__toggle");
+    const list = document.querySelector(".post-nav ul");
+    if (!toggle || !list) return;
+
+    toggle.addEventListener("click", function () {
+      const isExpanded = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", (!isExpanded).toString());
+      list.classList.toggle("is-open", !isExpanded);
+    });
+  });
+</script>
 
         </aside>
         <section class="main-content">

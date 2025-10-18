@@ -3,6 +3,17 @@
         {%- include head.html -%}
   <body>
     <main class="page-content" aria-label="Content">
+      <header class="site-banner" role="banner">
+        <picture>
+          <source srcset="{{ 'assets/img/banner.jpg' | relative_url }}" type="image/jpeg" />
+          <img
+            src="{{ 'assets/img/banner.png' | relative_url }}"
+            alt="49th IT header banner"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
+      </header>
       <div class="layout-container">
         <aside class="sidebar">
           {% include sidebar.html %}
