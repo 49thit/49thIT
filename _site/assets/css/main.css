@@ -148,12 +148,6 @@ figcaption { margin-top: 0.75rem; font-size: 0.85rem; color: var(--brand-muted);
   .layout-container { flex-direction: column; gap: 1.5rem; }
   .sidebar { padding: 2rem 1.75rem; border-right: none; border-bottom: 1px solid rgba(33, 20, 95, 0.08); width: 100%; flex: 1 1 auto; }
   .main-content { padding: 2.25rem 1.75rem; width: 100%; }
-  .post-nav__toggle { display: flex; width: min(100%, calc(var(--sidebar-button-width) * 2)); margin: 0 auto; }
-  .sidebar nav ul { display: none; gap: 0; margin-top: 0; padding: 0; border: none; border-radius: 0; background: var(--brand-panel); box-shadow: none; max-height: calc(5 * 3.75rem); overflow-y: auto; padding-right: 0.5rem; scrollbar-width: thin; scrollbar-color: rgba(96, 38, 158, 0.4) transparent; width: min(100%, calc(var(--sidebar-button-width) * 2)); margin: 0 auto; }
-  .sidebar nav ul.is-open { display: grid; }
-  .sidebar nav ul::-webkit-scrollbar { width: 6px; }
-  .sidebar nav ul::-webkit-scrollbar-thumb { background: rgba(96, 38, 158, 0.4); border-radius: 999px; }
-  .sidebar nav ul::-webkit-scrollbar-track { background: transparent; }
-  .sidebar nav a { font-size: 0.95rem; justify-content: center; width: 100%; flex: 1 1 auto; }
+  .post-nav__toggle { display: none; }
   img { border-radius: 16px; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; } }
