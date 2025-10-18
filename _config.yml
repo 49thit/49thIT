@@ -1,3 +1,9 @@
 title: "49thIT"
 description: "An Alaskan serial adventure in IT..."
-theme: minima
+plugins:
+  - jekyll-remote-theme
+
+remote_theme: abhinavs/moonwalk
+theme_config:
+  appearance: "dark"
+  show_copyright: true
