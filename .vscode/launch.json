@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Jekyll Serve",
+      "type": "pwa-node",
+      "request": "launch",
+      "runtimeExecutable": "/bin/zsh",
+      "args": [
+        "-lc",
+        "export PATH=/usr/local/opt/ruby/bin:$PATH; bundle exec jekyll serve --livereload --baseurl \"\""
+      ],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}
