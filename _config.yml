@@ -1,4 +1,5 @@
 title: "49thIT"
+author: "Palin Warwick"
 description: "An Alaskan serial adventure in IT..."
 
 # Use only local theme files you’ve vendored into the repo
@@ -14,6 +15,8 @@ plugins:
   - jekyll-feed
 
 theme_config:
-  appearance: "dark"
-  appearance_toggle: false
   show_copyright: true
+  show_reading_time: true # show number of words and reading time in the blog posts
+  back_home_text: "episode001.." # customize text for homepage link in post layout
+
+
