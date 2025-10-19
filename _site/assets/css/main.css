@@ -12,7 +12,7 @@ main.page-content { padding: clamp(2rem, 4vw, 3.5rem); }
 
 .site-banner { width: 100%; margin: 0 auto clamp(1.75rem, 3vw, 2.5rem); position: relative; background: #0b1f4d; color: var(--brand-panel); display: flex; justify-content: flex-start; align-items: center; padding: clamp(1.25rem, 3vw, 2rem) 0; max-height: 200px; overflow: hidden; }
 
-.site-banner__panel { width: min(100%, var(--content-max-width)); margin: 0 auto; padding: 0 clamp(2rem, 5vw, 4rem); display: inline-flex; align-items: flex-end; gap: clamp(0.75rem, 2vw, 1.4rem); }
+.site-banner__panel { width: min(100%, var(--content-max-width)); margin: 0 auto; padding: 0 clamp(1rem, 5vw, 4rem); display: inline-flex; align-items: flex-end; gap: clamp(0.75rem, 2vw, 1.4rem); }
 
 .site-banner__prompt-label { font-family: "Fira Code", "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; display: inline-flex; align-items: flex-end; font-size: clamp(0.75rem, 2vw, 0.95rem); letter-spacing: 0.1em; color: var(--brand-purple-soft); margin-right: clamp(0.75rem, 2vw, 1.1rem); }
 

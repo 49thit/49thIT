@@ -68,7 +68,7 @@ main.page-content {
 .site-banner__panel {
   width: min(100%, var(--content-max-width));
   margin: 0 auto;
-  padding: 0 clamp(2rem, 5vw, 4rem);
+  padding: 0 clamp(1rem, 5vw, 4rem);
   display: inline-flex;
   align-items: flex-end;
   gap: clamp(0.75rem, 2vw, 1.4rem);
