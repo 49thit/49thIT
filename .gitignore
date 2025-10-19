@@ -2,3 +2,5 @@ _site/
 .jekyll-cache/
 49thIT-GitHub.code-workspace
 .vscode
+.gitignore
+.DS_Store

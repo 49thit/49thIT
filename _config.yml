@@ -1,5 +1,5 @@
 title: "49thIT"
-author: "Palin Warwick"
+author: "49thIT, LLC"
 description: "An Alaskan serial adventure in IT..."
 
 # Use only local theme files you’ve vendored into the repo
@@ -16,7 +16,5 @@ plugins:
 
 theme_config:
   show_copyright: true
-  show_reading_time: true # show number of words and reading time in the blog posts
-  back_home_text: "episode001.." # customize text for homepage link in post layout
 
 
