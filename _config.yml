@@ -6,8 +6,8 @@ theme: null
 
 # Optional: nicer URLs and correct base path
 permalink: /:title/
-url: ""                   # keep empty for local serve
-baseurl: "/49thIT-GitHub" # set to your repo name; "" if user site
+url: "https://49thit.github.io"
+baseurl: "/49thIT"
 
 plugins:
   - jekyll-seo-tag
