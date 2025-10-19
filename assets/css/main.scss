@@ -49,11 +49,14 @@ body {
 
 main.page-content {
   padding: clamp(2rem, 4vw, 3.5rem);
+  width: 100%;
+  max-width: calc(var(--content-max-width) + var(--sidebar-width) + clamp(2rem, 4vw, 3.5rem) * 2);
+  margin: 0 auto;
 }
 
 .site-banner {
   width: 100%;
-  margin: 0 auto clamp(1.75rem, 3vw, 2.5rem);
+  margin: -5 auto clamp(1.75rem, 3vw, 2.5rem);
   position: relative;
   background: #0b1f4d;
   color: var(--brand-panel);
@@ -209,7 +212,7 @@ main.page-content {
   flex: 0 0 var(--sidebar-width);
   width: var(--sidebar-width);
   max-width: var(--sidebar-width);
-  padding: clamp(2rem, 4vw, 3rem) 0;
+  padding: clamp(3.4rem, 4vw, 3rem) 0;
   background-color: var(--brand-panel);
   color: var(--brand-text);
   display: flex;
