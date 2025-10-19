@@ -83,16 +83,19 @@ main.page-content {
 }
 
 .site-banner__aurora::before {
-  background: linear-gradient(
-    105deg,
-    rgba(3, 6, 18, 0.95) 0%,
-    rgba(6, 40, 80, 0.88) 14%,
-    rgba(19, 122, 126, 0.82) 32%,
-    rgba(84, 226, 170, 0.78) 50%,
-    rgba(19, 122, 126, 0.82) 68%,
-    rgba(6, 40, 80, 0.88) 86%,
-    rgba(2, 5, 16, 0.95) 100%
-  );
+  background:
+    linear-gradient(180deg, #0b1f4d 0%, rgba(11, 31, 77, 0) 30%, rgba(11, 31, 77, 0) 70%, #0b1f4d 100%),
+    linear-gradient(90deg, #0b1f4d 0%, rgba(11, 31, 77, 0) 28%, rgba(11, 31, 77, 0) 72%, #0b1f4d 100%),
+    linear-gradient(
+      105deg,
+      rgba(7, 19, 65, 0.92) 0%,
+      rgba(10, 52, 94, 0.85) 18%,
+      rgba(18, 110, 112, 0.82) 36%,
+      rgba(54, 180, 140, 0.82) 50%,
+      rgba(18, 110, 112, 0.82) 64%,
+      rgba(10, 52, 94, 0.85) 82%,
+      rgba(7, 19, 65, 0.92) 100%
+    );
   filter: blur(12px);
 }
 
@@ -185,13 +188,11 @@ main.page-content {
   box-shadow: 0 22px 48px rgba(4, 11, 43, 0.45);
 }
 
-.site-banner__panel:hover .site-banner__glyph,
 .site-banner__glyph:hover {
   color: #ffd978;
   text-shadow: 0 0 12px rgba(255, 215, 120, 0.55);
 }
 
-.site-banner__panel:hover .site-banner__glyph::after,
 .site-banner__glyph:hover::after {
   animation: twinkle 0.85s ease forwards;
 }
@@ -211,6 +212,57 @@ main.page-content {
   }
   100% {
     transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+}
+
+.site-banner__spark {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  left: calc(var(--spark-x) - 11px);
+  top: calc(var(--spark-y) - 11px);
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(255, 184, 28, 0.9) 0%, rgba(255, 184, 28, 0.1) 65%, transparent 100%);
+  animation: spark-pop 0.55s ease-out forwards;
+}
+
+.site-banner__spark::before,
+.site-banner__spark::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 216, 120, 0.9) 50%, transparent 100%);
+  transform-origin: center;
+  opacity: 0.8;
+}
+
+.site-banner__spark::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.site-banner__spark::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+@keyframes spark-pop {
+  0% {
+    transform: scale(0.4);
+    opacity: 0;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  90% {
+    transform: scale(0.6);
+    opacity: 0.35;
+  }
+  100% {
+    transform: scale(0.3);
     opacity: 0;
   }
 }
