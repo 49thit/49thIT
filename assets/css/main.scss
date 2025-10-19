@@ -1,6 +1,7 @@
 ---
 ---
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+@import "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap";
 
 :root {
   --brand-navy: #0b1f4d;
@@ -66,8 +67,8 @@ main.page-content {
 
 .site-banner__panel {
   width: min(100%, var(--content-max-width));
-  margin: 0 auto;
-  padding: 0 clamp(1rem, 5vw, 4rem);
+  margin: 0 clamp(0.5rem, 3vw, 1.75rem) 0 auto;
+  padding-inline: clamp(1rem, 2vw, 1.5rem);
   display: inline-flex;
   align-items: flex-end;
   gap: clamp(0.75rem, 2vw, 1.4rem);
@@ -118,19 +119,32 @@ main.page-content {
   line-height: 1;
 }
 
-.site-banner__typed .segment-leading,
+.site-banner__typed .segment-leading {
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  font-style: italic;
+  transform: translateY(0.065em);
+}
 .site-banner__typed .segment-trailing {
   text-transform: uppercase;
+  letter-spacing: -0.05em;
+  font-size: 1.1em;
+  margin-left: 0.06em;
+  transform: translateY(0.1em);
 }
 
 .site-banner__typed .segment-small {
-  font-size: 0.55em;
+  font-size: .8em;
   text-transform: lowercase;
+  letter-spacing: -0.03em;
+  margin-left: -0.1em;
+  font-style: italic;
+  transform: translateY(0.065em);
 }
 .site-banner__cursor {
   width: 1.2ch;
   height: 1.15em;
-  margin-left: 0.35rem;
+  margin-left: calc(-.2em); 
   background: rgba(255, 255, 255, 0.85);
   animation: cursor-blink 1s steps(1) infinite;
 }
