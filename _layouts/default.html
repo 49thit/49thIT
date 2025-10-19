@@ -6,7 +6,7 @@
       <header class="site-banner" role="banner">
         <div class="site-banner__panel" aria-hidden="true">
           <div class="site-banner__command-line">
-            <span class="site-banner__prompt-label" data-label="core.gacis.ak:>"></span>
+            <a class="site-banner__prompt-label" href="/" data-label="core.gacis.ak:>"></a>
             <span class="site-banner__typed" data-text="49thIT"></span>
             <span class="site-banner__cursor" aria-hidden="true"></span>
           </div>
@@ -121,6 +121,67 @@
           </div>
         </section>
       </div>
+      <script>
+        (function () {
+          const storageKey = "49thIT:lastPath";
+          const fallbackPath = "{{ page.fallback_episode | default: '/episode001-frost-lines-and-fiber-lines/' }}";
+
+          function onReady(fn) {
+            if (document.readyState !== "loading") {
+              fn();
+            } else {
+              document.addEventListener("DOMContentLoaded", fn, { once: true });
+            }
+          }
+
+          onReady(function () {
+            try {
+              const currentPath = window.location.pathname;
+              if (
+                currentPath &&
+                currentPath !== "/" &&
+                !currentPath.startsWith("/assets/")
+              ) {
+                localStorage.setItem(storageKey, currentPath);
+              }
+
+              const continueLink = document.querySelector("[data-continue-link]");
+              if (!continueLink) return;
+
+              const panel = continueLink.closest("[data-continue-panel]");
+              const messageEl = panel ? panel.querySelector("[data-continue-message]") : null;
+              const storedPath = localStorage.getItem(storageKey);
+
+              const targetPath =
+                (storedPath && storedPath !== "/"
+                  ? storedPath
+                  : continueLink.dataset.fallback) || fallbackPath;
+
+              if (!targetPath) return;
+
+              continueLink.href = targetPath;
+
+              const hasVisited = Boolean(storedPath && storedPath !== "/");
+
+              continueLink.textContent = hasVisited
+                ? "pickup where you left off..."
+                : "get started with episode001...";
+
+              if (panel) {
+                panel.classList.add("is-active");
+              }
+
+              if (messageEl) {
+                messageEl.textContent = hasVisited
+                  ? "Welcome back!"
+                  : "Welcome!";
+              }
+            } catch (error) {
+              console.warn("Continue reading unavailable:", error);
+            }
+          });
+        })();
+      </script>
     </main>
   </body>
 </html>
