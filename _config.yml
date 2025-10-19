@@ -8,7 +8,7 @@ theme: null
 # Optional: nicer URLs and correct base path
 permalink: /:title/
 url: "https://49thit.github.io"
-baseurl: "/49thIT"
+baseurl: ""
 
 plugins:
   - jekyll-seo-tag
