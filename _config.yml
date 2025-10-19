@@ -1,9 +1,18 @@
 title: "49thIT"
 description: "An Alaskan serial adventure in IT..."
-plugins:
-  - jekyll-remote-theme
 
-remote_theme: abhinavs/moonwalk
+# Use only local theme files you’ve vendored into the repo
+theme: null
+
+# Optional: nicer URLs and correct base path
+permalink: /:title/
+url: ""                   # keep empty for local serve
+baseurl: "/49thIT-GitHub" # set to your repo name; "" if user site
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+
 theme_config:
   appearance: "dark"
   appearance_toggle: false

@@ -55,214 +55,108 @@ main.page-content {
   width: 100%;
   margin: 0 auto clamp(1.75rem, 3vw, 2.5rem);
   position: relative;
-  background: linear-gradient(135deg, #040b2b 0%, #0b1f4d 60%, #071135 100%);
+  background: #0b1f4d;
   color: var(--brand-panel);
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: clamp(1.25rem, 3vw, 2rem) 0;
   max-height: 200px;
   overflow: hidden;
 }
 
-.site-banner__aurora {
-  position: relative;
-  width: min(100%, var(--content-max-width));
-  padding: 0 clamp(1.75rem, 4vw, 3rem);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.site-banner__aurora::before,
-.site-banner__aurora::after {
-  content: "";
-  position: absolute;
-  inset: -18%;
-  z-index: 0;
-}
-
-.site-banner__aurora::before {
-  background:
-    linear-gradient(180deg, #0b1f4d 0%, rgba(11, 31, 77, 0) 30%, rgba(11, 31, 77, 0) 70%, #0b1f4d 100%),
-    linear-gradient(90deg, #0b1f4d 0%, rgba(11, 31, 77, 0) 28%, rgba(11, 31, 77, 0) 72%, #0b1f4d 100%),
-    linear-gradient(
-      105deg,
-      rgba(7, 19, 65, 0.92) 0%,
-      rgba(10, 52, 94, 0.85) 18%,
-      rgba(18, 110, 112, 0.82) 36%,
-      rgba(54, 180, 140, 0.82) 50%,
-      rgba(18, 110, 112, 0.82) 64%,
-      rgba(10, 52, 94, 0.85) 82%,
-      rgba(7, 19, 65, 0.92) 100%
-    );
-  filter: blur(12px);
-}
-
-.site-banner__aurora::after {
-  background: radial-gradient(circle at 18% 68%, rgba(255, 184, 28, 0.33) 0%, rgba(255, 184, 28, 0) 65%),
-    radial-gradient(circle at 78% 30%, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 60%);
-  opacity: 0.55;
-}
-
 .site-banner__panel {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: clamp(0.9rem, 2.4vw, 1.4rem) clamp(2rem, 4vw, 3.5rem);
-  clip-path: polygon(0 18%, 10% 0, 100% 0, 100% 82%, 92% 100%, 0 100%);
-  background: rgba(7, 17, 40, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 18px 40px rgba(4, 11, 43, 0.35);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.site-banner__panel::before,
-.site-banner__panel::after {
-  content: "";
-  position: absolute;
-  border-radius: 999px;
-  filter: blur(0.5px);
-}
-
-.site-banner__panel::before {
-  width: clamp(38px, 6vw, 54px);
-  height: clamp(38px, 6vw, 54px);
-  background: radial-gradient(circle, rgba(255, 184, 28, 0.4) 0%, rgba(255, 184, 28, 0) 70%);
-  top: -30%;
-  left: -5%;
-}
-
-.site-banner__panel::after {
-  width: clamp(28px, 5vw, 44px);
-  height: clamp(28px, 5vw, 44px);
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 70%);
-  bottom: -35%;
-  right: -3%;
-}
-
-.site-banner__title {
-  position: relative;
-  font-size: clamp(2.6rem, 6vw, 4.6rem);
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: #ffffff;
-  display: flex;
-  align-items: baseline;
-  gap: 0.25rem;
-}
-
-.site-banner__glyph {
-  position: relative;
+  width: min(100%, var(--content-max-width));
+  margin: 0 auto;
+  padding: 0 clamp(2rem, 5vw, 4rem);
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-  cursor: default;
+  align-items: flex-end;
+  gap: clamp(0.75rem, 2vw, 1.4rem);
 }
 
-.site-banner__glyph::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0.7em;
-  height: 0.7em;
-  transform: translate(-50%, -50%) scale(0);
-  background: radial-gradient(circle, rgba(255, 184, 28, 0.75) 0%, rgba(255, 184, 28, 0) 70%);
+.site-banner__prompt-label {
+  font-family: "Fira Code", "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  display: inline-flex;
+  align-items: flex-end;
+  font-size: clamp(0.75rem, 2vw, 0.95rem);
+  letter-spacing: 0.1em;
+  //color: rgba(230, 236, 255, 0.8);
+  color: var(--brand-purple-soft);
+  margin-right: clamp(0.75rem, 2vw, 1.1rem);
+}
+
+.site-banner__command-line {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 0;
+  font-family: "Fira Code", "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: clamp(3rem, 7vw, 4.8rem);
+  font-weight: 600;
+  //color: #e6ecff;
+  color: var(--brand-gold);
+  letter-spacing: 0.08em;
+  line-height: 1;
+  min-height: clamp(3rem, 7vw, 4.8rem);
+}
+
+.site-banner__typed {
+  display: inline-flex;
+  align-items: flex-end;
+  min-width: 0;
+  min-height: 1em;
+  white-space: nowrap;
   opacity: 0;
-  pointer-events: none;
+  transition: opacity 0.2s ease;
 }
 
-.site-banner__glyph--small {
-  font-size: 0.5em;
-  align-self: flex-start;
+.site-banner__command-line.is-active .site-banner__typed {
+  opacity: 1;
 }
 
-.site-banner__panel:hover {
-  border-color: rgba(255, 184, 28, 0.45);
-  box-shadow: 0 22px 48px rgba(4, 11, 43, 0.45);
+.site-banner__typed span {
+  display: inline-flex;
+  align-items: flex-end;
+  line-height: 1;
 }
 
-.site-banner__glyph:hover {
-  color: #ffd978;
-  text-shadow: 0 0 12px rgba(255, 215, 120, 0.55);
+.site-banner__typed .segment-leading,
+.site-banner__typed .segment-trailing {
+  text-transform: uppercase;
 }
 
-.site-banner__glyph:hover::after {
-  animation: twinkle 0.85s ease forwards;
+.site-banner__typed .segment-small {
+  font-size: 0.55em;
+  text-transform: lowercase;
+}
+.site-banner__cursor {
+  width: 1.2ch;
+  height: 1.15em;
+  margin-left: 0.35rem;
+  background: rgba(255, 255, 255, 0.85);
+  animation: cursor-blink 1s steps(1) infinite;
 }
 
-@keyframes twinkle {
-  0% {
-    transform: translate(-50%, -50%) scale(0.2);
-    opacity: 0;
-  }
-  40% {
-    transform: translate(-50%, -50%) scale(1);
+.site-banner__cursor.is-typing {
+  animation: cursor-blink 0.6s steps(1) infinite;
+}
+
+.site-banner__cursor.is-complete {
+  animation: none;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.site-banner__cursor.is-hidden {
+  opacity: 0;
+  width: 0;
+  margin-left: 0;
+}
+
+@keyframes cursor-blink {
+  0%,
+  100% {
     opacity: 1;
   }
-  70% {
-    transform: translate(-50%, -50%) scale(0.6);
-    opacity: 0.55;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(0);
-    opacity: 0;
-  }
-}
-
-.site-banner__spark {
-  position: absolute;
-  width: 22px;
-  height: 22px;
-  left: calc(var(--spark-x) - 11px);
-  top: calc(var(--spark-y) - 11px);
-  pointer-events: none;
-  background: radial-gradient(circle, rgba(255, 184, 28, 0.9) 0%, rgba(255, 184, 28, 0.1) 65%, transparent 100%);
-  animation: spark-pop 0.55s ease-out forwards;
-}
-
-.site-banner__spark::before,
-.site-banner__spark::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent 0%, rgba(255, 216, 120, 0.9) 50%, transparent 100%);
-  transform-origin: center;
-  opacity: 0.8;
-}
-
-.site-banner__spark::before {
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.site-banner__spark::after {
-  transform: translate(-50%, -50%) rotate(-45deg);
-}
-
-@keyframes spark-pop {
-  0% {
-    transform: scale(0.4);
-    opacity: 0;
-  }
-  40% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  90% {
-    transform: scale(0.6);
-    opacity: 0.35;
-  }
-  100% {
-    transform: scale(0.3);
+  50% {
     opacity: 0;
   }
 }
@@ -895,25 +789,9 @@ figcaption {
     padding: clamp(1rem, 4vw, 1.5rem) 0;
   }
 
-  .site-banner__aurora {
-    padding: 0 clamp(1rem, 5vw, 1.75rem);
-  }
-
-  .site-banner__panel {
-    width: 100%;
-    align-items: flex-start;
-    gap: 0.55rem;
-    padding: clamp(0.75rem, 3vw, 1.25rem) clamp(1rem, 4vw, 1.5rem);
-    clip-path: polygon(0 15%, 12% 0, 100% 0, 100% 85%, 88% 100%, 0 100%);
-  }
-
   .site-banner__title {
     font-size: clamp(2.1rem, 10vw, 3.2rem);
     letter-spacing: 0.14em;
-  }
-
-  .site-banner__glyph--small {
-    font-size: 0.55em;
   }
 
   .main-content h1:first-of-type {

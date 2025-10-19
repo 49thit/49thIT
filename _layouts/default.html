@@ -4,20 +4,109 @@
   <body>
     <main class="page-content" aria-label="Content">
       <header class="site-banner" role="banner">
-        <div class="site-banner__aurora" aria-hidden="true">
-          <div class="site-banner__panel">
-            <span class="site-banner__title">
-              <span class="site-banner__glyph">4</span>
-              <span class="site-banner__glyph">9</span>
-              <span class="site-banner__glyph site-banner__glyph--small">t</span>
-              <span class="site-banner__glyph site-banner__glyph--small">h</span>
-              <span class="site-banner__glyph">I</span>
-              <span class="site-banner__glyph">T</span>
-            </span>
+        <div class="site-banner__panel" aria-hidden="true">
+          <div class="site-banner__command-line">
+            <span class="site-banner__prompt-label" data-label="root@ns.gaciscore.net:>_"></span>
+            <span class="site-banner__typed" data-text="49thIT"></span>
+            <span class="site-banner__cursor" aria-hidden="true"></span>
           </div>
         </div>
         <span class="sr-only">49thIT</span>
       </header>
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const typedEl = document.querySelector(".site-banner__typed");
+          const cursorEl = document.querySelector(".site-banner__cursor");
+          const commandLine = document.querySelector(".site-banner__command-line");
+          const promptLabel = commandLine ? commandLine.querySelector(".site-banner__prompt-label") : null;
+          if (!typedEl || !cursorEl || !commandLine) return;
+
+          const segments = [
+            { text: "49", className: "segment-leading" },
+            { text: "th", className: "segment-small" },
+            { text: "IT", className: "segment-trailing" }
+          ];
+
+          if (promptLabel) {
+            promptLabel.textContent = promptLabel.dataset.label || "root@ns.gaciscore.net:>_";
+          }
+
+          const letterDelay = 140;
+          let typingActive = false;
+          let typedOnce = false;
+
+          typedEl.innerHTML = "";
+          cursorEl.classList.remove("is-complete");
+          cursorEl.setAttribute("role", "button");
+          cursorEl.setAttribute("tabindex", "0");
+          cursorEl.setAttribute("aria-label", "Type command 49thIT");
+
+          function typeCommand() {
+            if (typingActive || typedOnce) return;
+            typingActive = true;
+            commandLine.classList.add("is-active");
+            cursorEl.classList.add("is-typing");
+            typedEl.innerHTML = "";
+            cursorEl.classList.add("is-hidden");
+
+            let segmentIndex = 0;
+            let charIndex = 0;
+            let currentSpan = null;
+
+            function finishTyping() {
+              cursorEl.classList.remove("is-typing");
+              cursorEl.classList.add("is-complete");
+              cursorEl.classList.add("is-hidden");
+              cursorEl.removeAttribute("role");
+              cursorEl.removeAttribute("tabindex");
+              typingActive = false;
+              typedOnce = true;
+            }
+
+            function step() {
+              if (segmentIndex >= segments.length) {
+                finishTyping();
+                return;
+              }
+
+              const segment = segments[segmentIndex];
+              if (!currentSpan) {
+                currentSpan = document.createElement("span");
+                if (segment.className) currentSpan.className = segment.className;
+                typedEl.appendChild(currentSpan);
+              }
+
+              currentSpan.textContent += segment.text.charAt(charIndex);
+              charIndex += 1;
+
+              if (charIndex >= segment.text.length) {
+                segmentIndex += 1;
+                charIndex = 0;
+                currentSpan = null;
+              }
+
+              if (segmentIndex >= segments.length) {
+                finishTyping();
+              } else {
+                setTimeout(step, letterDelay);
+              }
+            }
+
+            setTimeout(step, letterDelay);
+          }
+
+          function handleActivation(event) {
+            if (event.type === "keydown" && event.key !== "Enter" && event.key !== " ") {
+              return;
+            }
+            event.preventDefault();
+            typeCommand();
+          }
+
+          cursorEl.addEventListener("click", handleActivation);
+          cursorEl.addEventListener("keydown", handleActivation);
+        });
+      </script>
       <div class="layout-container">
         <aside class="sidebar">
           {% include sidebar.html %}
