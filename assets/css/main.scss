@@ -4,15 +4,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 
 :root {
-  --brand-navy: #21145f;
-  --brand-purple: #60269e;
-  --brand-purple-soft: #c4a7e2;
+  --brand-navy: #0b1f4d;
+  --brand-purple: #0b1f4d;
+  --brand-purple-soft: #95a3c5;
   --brand-blue: #0075c9;
   --brand-blue-soft: #54c8e8;
   --brand-green: #00a5ad;
   --brand-green-soft: #badf93;
   --brand-red: #fd3f52;
   --brand-red-soft: #feaa61;
+  --brand-gold: #ffb81c;
   --brand-text: #212529;
   --brand-muted: #5a6171;
   --brand-light: #f5f6fb;
@@ -118,14 +119,13 @@ main.page-content {
   width: 100%;
   padding: 0.9rem 1.1rem;
   border-radius: 0;
-  border: 2px dotted var(--brand-purple);
-  background: var(--brand-panel);
+  border: 1px solid var(--brand-purple);
+  background: var(--brand-purple);
   background-image: none;
-  color: var(--brand-purple);
+  color: var(--brand-gold);
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.05em;
-  text-transform: uppercase;
   cursor: pointer;
   position: relative;
   transition: color 0.25s ease, border-color 0.25s ease;
@@ -139,7 +139,7 @@ main.page-content {
   height: 18px;
   border-radius: 50%;
   position: relative;
-  background: var(--brand-purple);
+  background: var(--brand-gold);
   box-shadow: none;
 }
 
@@ -151,10 +151,10 @@ main.page-content {
   left: 50%;
   width: 10px;
   height: 2px;
-  background: var(--brand-panel);
+  background: var(--brand-purple);
   border-radius: 2px;
   transform: translate(-50%, -50%);
-  transition: transform 0.25s ease;
+  transition: transform 0.25s ease, opacity 0.2s ease;
 }
 
 .post-nav__icon::after {
@@ -163,16 +163,16 @@ main.page-content {
 
 .post-nav__toggle[aria-expanded="true"] {
   background: var(--brand-purple);
-  color: var(--brand-panel);
+  color: var(--brand-gold);
   border-color: var(--brand-purple);
   transform: none;
 }
 
 .post-nav__toggle:hover,
 .post-nav__toggle:focus {
-  color: var(--brand-purple);
+  color: var(--brand-gold);
   border-color: var(--brand-purple);
-  background: var(--brand-panel);
+  background: var(--brand-purple);
   box-shadow: none !important;
   filter: none !important;
   outline: none;
@@ -180,6 +180,7 @@ main.page-content {
 
 .post-nav__toggle[aria-expanded="true"] .post-nav__icon::after {
   transform: translate(-50%, -50%) rotate(0deg);
+  opacity: 0;
 }
 
 .sidebar nav ul {
@@ -207,17 +208,26 @@ main.page-content {
   font-size: 0.95rem;
   font-weight: 600;
   letter-spacing: 0.01em;
-  text-transform: uppercase;
   color: var(--brand-purple);
   background-color: var(--brand-panel);
-  border: 2px dotted var(--brand-purple);
+  border: 1px solid var(--brand-purple);
+  border-top-color: transparent;
+  border-bottom-color: transparent;
   transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.sidebar nav li:first-child a {
+  border-top-color: var(--brand-purple);
+}
+
+.sidebar nav li:last-child a {
+  border-bottom-color: var(--brand-purple);
 }
 
 .sidebar nav a:hover,
 .sidebar nav a:focus {
   background-color: var(--brand-purple);
-  color: var(--brand-panel);
+  color: var(--brand-gold);
   transform: none;
   box-shadow: none;
   text-decoration: none;
@@ -278,14 +288,12 @@ h4 {
 h5 {
   font-size: 1.2rem;
   letter-spacing: 0.02em;
-  text-transform: uppercase;
   color: var(--brand-purple);
 }
 
 h6 {
   font-size: 1rem;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--brand-blue);
 }
 
@@ -379,7 +387,6 @@ table {
 table thead {
   background: linear-gradient(90deg, var(--brand-blue) 0%, var(--brand-blue-soft) 100%);
   color: var(--brand-panel);
-  text-transform: uppercase;
   letter-spacing: 0.08em;
 }
 
@@ -396,7 +403,7 @@ table tbody tr:nth-child(even) {
 }
 
 table tbody tr:hover {
-  background-color: rgba(196, 167, 226, 0.25);
+  background-color: rgba(11, 31, 77, 0.12);
 }
 
 hr {
@@ -427,11 +434,10 @@ input[type="button"] {
   justify-content: center;
   padding: 0.85rem 2.75rem;
   border-radius: 0;
-  border: 0.35rem dotted transparent;
+  border: 1px solid transparent;
   font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 0.05em;
-  text-transform: uppercase;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
   background: linear-gradient(90deg, var(--brand-blue) 0%, var(--brand-blue-soft) 100%);
@@ -448,7 +454,7 @@ input[type="submit"]:focus,
 input[type="button"]:hover,
 input[type="button"]:focus {
   transform: none;
-  box-shadow: 0 12px 30px rgba(96, 38, 158, 0.2);
+  box-shadow: 0 12px 30px rgba(11, 31, 77, 0.2);
 }
 
 .btn--outline {
@@ -471,9 +477,8 @@ input[type="button"]:focus {
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--brand-purple);
-  background-color: rgba(196, 167, 226, 0.24);
+  background-color: rgba(11, 31, 77, 0.12);
 }
 
 img {
@@ -498,7 +503,7 @@ figcaption {
   margin: 2.5rem 0;
   padding: 2.25rem;
   border-radius: 24px;
-  background: linear-gradient(135deg, rgba(84, 200, 232, 0.15), rgba(96, 38, 158, 0.15));
+  background: linear-gradient(135deg, rgba(84, 200, 232, 0.15), rgba(11, 31, 77, 0.15));
   border: 1px solid rgba(84, 200, 232, 0.3);
   box-shadow: none;
 }
@@ -553,7 +558,6 @@ figcaption {
 
 .stats-grid .stat-card .label {
   font-size: 0.9rem;
-  text-transform: uppercase;
   letter-spacing: 0.1em;
   color: var(--brand-muted);
 }
@@ -598,13 +602,13 @@ figcaption {
   .sidebar {
     padding: 2rem 1.75rem;
     border-right: none;
-    border-bottom: 1px solid rgba(33, 20, 95, 0.08);
+    border-bottom: none;
     width: 100%;
     flex: 1 1 auto;
   }
 
   .main-content {
-    padding: 2.25rem 1.75rem;
+    padding: 0.55rem 1.75rem 2.25rem;
     width: 100%;
   }
 
@@ -625,7 +629,7 @@ figcaption {
     overflow-x: hidden;
     padding-right: 0.5rem;
     scrollbar-width: thin;
-    scrollbar-color: rgba(96, 38, 158, 0.4) transparent;
+    scrollbar-color: rgba(11, 31, 77, 0.4) transparent;
   }
 
   .sidebar .post-nav ul.is-open {
@@ -637,7 +641,7 @@ figcaption {
   }
 
   .sidebar .post-nav ul::-webkit-scrollbar-thumb {
-    background: rgba(96, 38, 158, 0.4);
+    background: rgba(11, 31, 77, 0.4);
     border-radius: 999px;
   }
 
@@ -661,6 +665,14 @@ figcaption {
     width: 100%;
     max-width: clamp(18rem, 90vw, 34rem);
     margin: 0 auto;
+  }
+
+  .site-banner {
+    margin-bottom: 2px;
+  }
+
+  .main-content h1:first-of-type {
+    margin-top: 0.4rem;
   }
 
   .sidebar {
