@@ -8,8 +8,9 @@
     episodes...
     <span class="post-nav__icon" aria-hidden="true"></span>
   </button>
+  {% assign episodes = site.posts | sort: "title" | reverse %}
   <ul id="post-nav-list">
-    {% for post in site.posts %}
+    {% for post in episodes %}
       <li>
         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
       </li>
