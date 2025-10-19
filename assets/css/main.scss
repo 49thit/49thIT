@@ -397,6 +397,16 @@ main.page-content {
   margin-top: 1.5rem;
 }
 
+.post-article__footer {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.post-article__next-button {
+  margin: 0;
+}
+
 .continue-panel {
   //display: flex;
   //flex-direction: column;
@@ -422,21 +432,13 @@ main.page-content {
   justify-content: center;
   gap: 0.5rem;
   padding: 0.85rem 1.65rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  //border-radius: 999px;
-  //background: var(--brand-purple);
-  //color: var(--brand-gold);
   text-decoration: none;
   font-weight: 600;
   letter-spacing: 0.03em;
-  //transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-
   background-color: var(--brand-panel);
   border: 1px solid var(--brand-purple);
   color: var(--brand-purple);
   transition: background-color 0.25s ease, color 0.25s ease;
-
 }
 
 .continue-panel__cta:hover,

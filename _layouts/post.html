@@ -8,4 +8,21 @@ layout: default
   <div class="post-article__content">
     {{ content }}
   </div>
+  {% assign ordered_posts = site.posts | sort: "title" %}
+  {% assign found_current = false %}
+  {% assign next_episode = nil %}
+  {% for post in ordered_posts %}
+    {% if found_current %}
+      {% assign next_episode = post %}
+      {% break %}
+    {% endif %}
+    {% if post.url == page.url %}
+      {% assign found_current = true %}
+    {% endif %}
+  {% endfor %}
+  {% if next_episode and page.title != "episodeNEXT" %}
+  <footer class="post-article__footer">
+    <a class="continue-panel__cta post-article__next-button" href="{{ next_episode.url | relative_url }}">on to the next episode...</a>
+  </footer>
+  {% endif %}
 </article>
