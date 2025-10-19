@@ -2,3 +2,4 @@ _site/
 .jekyll-cache/
 49thIT-GitHub.code-workspace
 .vscode
+_config*
