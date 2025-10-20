@@ -22,7 +22,19 @@ layout: default
   {% endfor %}
   {% if next_episode and page.title != "episodeNEXT" %}
   <footer class="post-article__footer">
-    <a class="continue-panel__cta post-article__next-button" href="{{ next_episode.url | relative_url }}">on to the next episode...</a>
+    <a
+      class="continue-panel__cta post-article__next-button"
+      href="{{ next_episode.url | relative_url }}"
+      aria-label="on to {{ next_episode.title | strip_html | escape }}"
+    >
+      <span class="post-article__next-button-sizer" aria-hidden="true">&nbsp;</span>
+      <span class="post-article__next-button-content" aria-hidden="true">
+        <span class="post-article__next-button-static">next up...</span>
+        <span class="post-article__next-button-marquee">
+          <span>{{ next_episode.title | strip_html | escape }}</span>
+        </span>
+      </span>
+    </a>
   </footer>
   {% endif %}
 </article>

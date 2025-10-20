@@ -14,7 +14,5 @@ plugins:
   - jekyll-seo-tag
   - jekyll-feed
 
-theme_config:
-  show_copyright: true
 
 
