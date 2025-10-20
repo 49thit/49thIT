@@ -391,6 +391,105 @@ main.page-content {
 
 .post-article__next-button {
   margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.post-article__next-button-sizer {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.post-article__next-button-content {
+  position: absolute;
+  inset: 0;
+  display: block;
+  pointer-events: none;
+}
+
+.post-article__next-button-static,
+.post-article__next-button-marquee {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.post-article__next-button-static {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.post-article__next-button:hover .post-article__next-button-static,
+.post-article__next-button:focus-visible .post-article__next-button-static {
+  opacity: 0;
+  transition-delay: 0.4s;
+}
+
+.post-article__next-button-marquee {
+  opacity: 0;
+  justify-content: flex-start;
+  overflow: hidden;
+  transition: opacity 0s linear;
+}
+
+.post-article__next-button:hover .post-article__next-button-marquee,
+.post-article__next-button:focus-visible .post-article__next-button-marquee {
+  opacity: 1;
+  transition-delay: 0.6s;
+}
+
+.post-article__next-button-marquee > span {
+  display: inline-block;
+  white-space: nowrap;
+  transform: translateX(100%);
+}
+
+.post-article__next-button:hover .post-article__next-button-marquee > span,
+.post-article__next-button:focus-visible .post-article__next-button-marquee > span {
+  animation: next-button-marquee-text 6s linear infinite;
+  animation-delay: 0.6s;
+}
+
+@keyframes next-button-marquee-text {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .post-article__next-button-static,
+  .post-article__next-button-marquee,
+  .post-article__next-button-marquee > span {
+    animation: none !important;
+    animation-delay: 0s !important;
+  }
+
+  .post-article__next-button-static {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+    transition: none !important;
+    transition-delay: 0s !important;
+  }
+
+  .post-article__next-button-marquee {
+    display: none !important;
+    transition: none !important;
+    transition-delay: 0s !important;
+  }
+
+  .post-article__next-button:hover .post-article__next-button-static,
+  .post-article__next-button:focus-visible .post-article__next-button-static {
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+    transition-delay: 0s !important;
+  }
 }
 
 .continue-panel__cta {
